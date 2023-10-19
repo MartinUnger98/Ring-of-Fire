@@ -10,8 +10,12 @@
         width: 150px;
     }
     img {
-        height: 100px;
+        height: 50px;
         object-fit: cover;
         
     }
+}
+
+.player-active {
+    background-color: #ffb172;
 }
