@@ -14,6 +14,8 @@ import { AddPlayerComponent } from './add-player/add-player.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { CardInstructionComponent } from './card-instruction/card-instruction.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     StartScreenComponent,
     GameComponent,
     PlayerComponent,
-    AddPlayerComponent
+    AddPlayerComponent,
+    CardInstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatDialogModule,
     MatInputModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],

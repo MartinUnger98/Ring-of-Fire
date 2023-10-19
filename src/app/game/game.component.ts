@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddPlayerComponent } from '../add-player/add-player.component';
 
 @Component({
@@ -33,7 +33,9 @@ export class GameComponent implements OnInit {
     if (poppedCard !== undefined && !this.pickCardAnnimation) {
       this.currentCard = poppedCard;
       this.pickCardAnnimation = true;
-      
+
+      this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnnimation = false

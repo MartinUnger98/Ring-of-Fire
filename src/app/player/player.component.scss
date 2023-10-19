@@ -1,18 +1,21 @@
 .player {
     display: flex;
     align-items: center;
-    
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #9b9897;
     p {
         font-size: 32px;
         margin-left: 16px;
         font-family: 'MedievalSharp', sans-serif;
         color: white;
         width: 150px;
+        margin-top: 16px;
     }
     img {
         height: 50px;
         object-fit: cover;
-        
+        padding: 8px;
     }
 }
 
