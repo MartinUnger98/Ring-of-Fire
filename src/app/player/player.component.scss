@@ -1,0 +1,17 @@
+.player {
+    display: flex;
+    align-items: center;
+    
+    p {
+        font-size: 32px;
+        margin-left: 16px;
+        font-family: 'MedievalSharp', sans-serif;
+        color: white;
+        width: 150px;
+    }
+    img {
+        height: 100px;
+        object-fit: cover;
+        
+    }
+}
