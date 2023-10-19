@@ -6,13 +6,13 @@ class="player-position"></app-player>
 
 <div class="game-field">
     <div class="card-stack">        
-        <img *ngFor="let c of [0, 1, 2, 3]; let i = index;" [ngStyle]="{'right.px': i * 5}" src="/assets/img/cards/card_cover.png" alt="">
+        <img *ngFor="let c of [0, 1, 2, 3]; let i = index;" [ngStyle]="{'right.px': i * 5}" src="../../assets/img/cards/card_cover.png" alt="">
 
-        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="/assets/img/cards/card_cover.png" alt="">
+        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="../../assets/img/cards/card_cover.png" alt="">
 
-        <img *ngFor="let card of game.playedCards" src="/assets/img/cards/{{ card }}.png" class="played-card" alt="">
+        <img *ngFor="let card of game.playedCards" src="../../assets/img/cards/{{ card }}.png" class="played-card" alt="">
 
-        <img (click)="takeCard()" *ngIf="pickCardAnnimation" class="pick-card" style="right: 25px;" src="/assets/img/cards/{{ currentCard }}.png" alt="">
+        <img (click)="takeCard()" *ngIf="pickCardAnnimation" class="pick-card" style="right: 25px;" src="../../assets/img/cards/{{ currentCard }}.png" alt="">
         
     </div>
 </div>
