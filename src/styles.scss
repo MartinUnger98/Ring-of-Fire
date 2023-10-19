@@ -7,11 +7,10 @@
     src: url('assets/fonts/medievalsharp-v26-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-body {
-    font-family: 'MedievalSharp', sans-serif !important;
-    background-image: url(assets/img/background.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-repeat: 0;
+html {
+    font-family: 'MedievalSharp', sans-serif;
+}
 
+body {
+    margin: 0;
 }

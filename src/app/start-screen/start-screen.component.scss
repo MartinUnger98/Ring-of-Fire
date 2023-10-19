@@ -1,0 +1,37 @@
+.start-screen {
+    background-image: url(/assets/img/background.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.app-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+    font-size: 84px;
+    text-align: center;
+}
+
+button {
+    font-family: 'MedievalSharp', sans-serif;
+    font-size: 28px;
+    padding: 8px;
+    background-color: #ecd284;
+    cursor: pointer;
+    border-radius: 10px;
+    &:hover {
+        background-color: #c5b072;
+    }
+
+    p {
+        margin: 0;
+    }
+}
