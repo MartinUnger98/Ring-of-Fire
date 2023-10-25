@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "Ring_of_Fire",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
