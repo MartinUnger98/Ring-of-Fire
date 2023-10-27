@@ -12,12 +12,12 @@ class="player-position"></app-player>
 
         <img *ngFor="let card of game.playedCards" src="assets/img/cards/{{ card }}.png" class="played-card" alt="">
 
-        <img (click)="takeCard()" *ngIf="pickCardAnnimation" class="pick-card" style="right: 25px;" src="assets/img/cards/{{ currentCard }}.png" alt="">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnnimation" class="pick-card" style="right: 25px;" src="assets/img/cards/{{ game.currentCard }}.png" alt="">
         
     </div>
 </div>
 
-<app-card-instruction [card]="currentCard"></app-card-instruction>
+<app-card-instruction [card]="game.currentCard"></app-card-instruction>
 
 <button mat-fab color="primary" (click)="openDialog()" class="btn-add">
     <mat-icon>add</mat-icon>
