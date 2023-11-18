@@ -1,5 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ViewChild, ElementRef } from '@angular/core';
 import { Game } from 'src/models/game';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddPlayerComponent } from '../add-player/add-player.component';
 import { Firestore, addDoc, collection, doc, docData,onSnapshot, updateDoc } from '@angular/fire/firestore';
@@ -11,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  @ViewChild('overlay') overlay!: ElementRef;
+
   pickCardAnnimation = false;
   
   game!: Game;
@@ -18,8 +21,7 @@ export class GameComponent implements OnInit {
   unsubGames;
   gameId: string = '';
 
-
-  constructor(public dialog: MatDialog, private route: ActivatedRoute) {
+  constructor(public dialog: MatDialog, private route: ActivatedRoute, private router: Router) {
     this.unsubGames = onSnapshot(this.getGamesRef(), (list) => {
       list.forEach(element => {
         console.log("Game:", element.data());
@@ -62,20 +64,29 @@ export class GameComponent implements OnInit {
 
 
   takeCard() {
-    let poppedCard = this.game.stack.pop();
-    if (poppedCard !== undefined && !this.game.pickCardAnnimation) {
-      this.game.currentCard = poppedCard;
-      this.game.pickCardAnnimation = true;
+    if (this.game.players.length > 1) {
+      let poppedCard = this.game.stack.pop();
+      if (poppedCard !== undefined && !this.game.pickCardAnnimation) {
+        this.game.currentCard = poppedCard;
+        this.game.pickCardAnnimation = true;
 
-      this.game.currentPlayer++;
-      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
-      this.updateGame();
-      setTimeout(() => {
-        this.game.playedCards.push(this.game.currentCard);
-        this.game.pickCardAnnimation = false;
+        this.game.currentPlayer++;
+        this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
         this.updateGame();
-      }, 1000);
+        setTimeout(() => {
+          this.game.playedCards.push(this.game.currentCard);
+          this.game.pickCardAnnimation = false;
+          this.updateGame();
+        }, 1000);
+      }
+      else if (poppedCard === undefined && !this.game.pickCardAnnimation) {
+        this.overlay.nativeElement.classList.remove('d-none');
+        setTimeout(() => {
+          this.router.navigateByUrl('');
+        }, 5000);
+      }
     }
+    
   }
 
   openDialog(): void {

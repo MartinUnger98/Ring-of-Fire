@@ -17,6 +17,10 @@ class="player-position"></app-player>
     </div>
 </div>
 
+<div #overlay class="overlay d-none">
+    <p>Game Over</p>
+</div>
+
 <app-card-instruction [card]="game.currentCard"></app-card-instruction>
 
 <button mat-fab color="primary" (click)="openDialog()" class="btn-add">

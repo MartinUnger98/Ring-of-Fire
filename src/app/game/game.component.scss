@@ -62,3 +62,26 @@
     bottom: 32px;
     background-color: #FFB172;
 }
+
+.d-none {
+    display: none !important;
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        color: white;
+        font-family: 'MedievalSharp', sans-serif;
+        font-size: 150px;
+        font-weight: 700;
+    }
+}
