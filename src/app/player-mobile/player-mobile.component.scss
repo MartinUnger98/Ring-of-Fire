@@ -1,21 +1,23 @@
 .player {
+    width: 80px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color: #9b9897;
     p {
-        font-size: 32px;
-        line-height: 100%;
+        font-size: 16px;
         font-family: 'MedievalSharp', sans-serif;
         color: white;
-        width: 150px;
-        margin: 0;
+        width: 100%;
+        text-align: center;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin: 8px 0px 0px 8px;
     }
     img {
-        height: 50px;
+        height: 35px;
         object-fit: cover;
         padding: 8px;
     }

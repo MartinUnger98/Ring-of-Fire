@@ -18,14 +18,14 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-@media (max-width: 720px) {
+@media (max-width: 840px) {
     .hide-mobile {
-        display: none;
+        display: none !important;
     }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 840px) {
     .hide-desktop {
-        display: none;
+        display: none !important;
     }
 }

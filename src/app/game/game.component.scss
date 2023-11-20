@@ -56,6 +56,33 @@
     }
 }
 
+.scroll-container-mobile {
+    position: absolute;
+    left: 8px;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 8px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.scroll-container {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: calc(100vh - 100px - 150px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .d-none {
     display: none !important;
 }
