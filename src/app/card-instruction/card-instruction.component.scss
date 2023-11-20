@@ -3,6 +3,12 @@
     bottom: 32px;
     left: 100px;
     right: 100px;
+    @media (max-width: 960px) {
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        border-radius: 0px;
+    }
 }
 
 .mat-mdc-card-title {

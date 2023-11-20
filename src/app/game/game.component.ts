@@ -24,7 +24,6 @@ export class GameComponent implements OnInit {
   constructor(public dialog: MatDialog, private route: ActivatedRoute, private router: Router) {
     this.unsubGames = onSnapshot(this.getGamesRef(), (list) => {
       list.forEach(element => {
-        console.log("Game:", element.data());
       });
     });
   }
@@ -32,7 +31,6 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.newGame();
     this.route.params.subscribe((params) => {
-      console.log(params['id']);
       this.gameId = params['id'];
       let game$ = docData(this.getSingleDocRef('games', this.gameId));
       game$.subscribe((game: any) => {
